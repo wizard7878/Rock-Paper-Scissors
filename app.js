@@ -8,22 +8,22 @@ var obj = {
 
 
 
-document.querySelector('.opration .stone').style.display = "none"
-document.querySelector('.opration .paper').style.display = "none"
-document.querySelector('.opration .scissors').style.display = "none"
-
+document.querySelector('.opration.stone').style.display = "none"
+document.querySelector('.opration.paper').style.display = "none"
+document.querySelector('.opration.scissors').style.display = "none"
+document.querySelector('.opration_two .images').style.display = "none"
 
 
 
 document.querySelector('.btn-new').addEventListener('click',()=>{
-    document.querySelector('.opration .stone').style.display = "flex"
-    document.querySelector('.opration .paper').style.display = "flex"
-    document.querySelector('.opration .scissors').style.display = "flex"
+    document.querySelector('.opration.stone').style.display = "flex"
+    document.querySelector('.opration.paper').style.display = "flex"
+    document.querySelector('.opration.scissors').style.display = "flex"
 
     scores = [0,0]
     document.getElementById('score-0').textContent = 0
     document.getElementById('score-1').textContent = 0
-    document.querySelector('.opration_two .images').src = `img/null.png`
+    document.querySelector('.opration_two .images').style.display = "none"
 
 
     document.getElementById(`name-1`).textContent = "Player 2"
@@ -34,13 +34,13 @@ document.querySelector('.btn-new').addEventListener('click',()=>{
 })
 
 
-document.querySelector('.opration .stone').addEventListener('click',()=>{
+document.querySelector('.opration.stone').addEventListener('click',()=>{
     
     ops('stone')
 
 })
 
-document.querySelector('.opration .paper').addEventListener('click',()=>{
+document.querySelector('.opration.paper').addEventListener('click',()=>{
     
     ops('paper')
 
@@ -48,7 +48,7 @@ document.querySelector('.opration .paper').addEventListener('click',()=>{
 
 
 
-document.querySelector('.opration .scissors').addEventListener('click',()=>{
+document.querySelector('.opration.scissors').addEventListener('click',()=>{
     
     ops('scissors')
 
@@ -82,8 +82,8 @@ function ops(thing){
 function game_finished(winner_id){
     document.getElementById(`name-${winner_id}`).textContent = "Winner"
     document.getElementById(`name-${winner_id}`).classList.add('winner')
-    document.querySelector('.opration .stone').style.display = "none"
-    document.querySelector('.opration .paper').style.display = "none"
-    document.querySelector('.opration .scissors').style.display = "none"
+    document.querySelector('.opration.stone').style.display = "none"
+    document.querySelector('.opration.paper').style.display = "none"
+    document.querySelector('.opration.scissors').style.display = "none"
         
 }
